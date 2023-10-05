@@ -6,21 +6,23 @@
     <title>Gyakorló String feladatok</title>
     <script>
         //Eseménykezelő
-        document.addEventListener("DOMContentLoaded");
-        function bekuldes(){
-            const kimenet=document.getElementById("kimenet");
-            const kisNagySzoveg=document.getElementById("fel1").value;
-            const kicsivel=document.getElementById("kicsi").checked;
-            const naggyal=document.getElementById("nagy").checked;
+        document.addEventListener("DOMContentLoaded", bekuldes);
+        function bekuldes() {
+            const bekuld = document.getElementById("bekuld");
+            const kimenet = document.getElementById("kimenet");
 
-            if (kicsivel){
-                kimenet.innerText=kisNagySzoveg.toLowerCase();
-            }
-            else if (naggyal){
-                kimenet.innerText=kisNagySzoveg.toUpperCase();
-            }
-            kimenet=kisNagySzoveg;
-        }
+            bekuld.addEventListener("click", () => {
+                const kisNagySzoveg = document.getElementById("fel1").value;
+                const kicsivel = document.getElementById("kicsi").checked;
+                const naggyal = document.getElementById("nagy").checked;
+
+                if (kicsivel) {
+                    kimenet.innerText = kisNagySzoveg.toLowerCase();
+                } else if (naggyal) {
+                    kimenet.innerText = kisNagySzoveg.toUpperCase();
+                }
+            });
+}
 
         document.addEventListener("DOMContentLoaded", init);
         function init(){
@@ -78,7 +80,7 @@
         <label for="nagy">Nagybetűs</label>
     </div>
     <div>
-        <button onclick="bekuld()">Beküld</button>
+        <button id="bekuld">Beküld</button>
     </div>
     <div>
         <p id="kimenet"></p>
