@@ -9,6 +9,7 @@
     <!--Feladat 1-->
     <label for="szoveg">Kérlek írj be egy szöveget: </label>
     <input type="text" id="szoveg">
+    <p id="f1"></p>
 
     <!--Feladat 2-->
     <label for="csaladiNev">Családinév:</label>
@@ -16,10 +17,12 @@
 
     <label for="keresztNev">Keresztnév: </label>
     <input type="text" id="keresztNev">
+    <p id="f2"></p>
 
     <!--Feladat 3-->
     <label for="kisBetus">Írj be vmit:</label>
     <input type="text" id="kisBetus">
+    <p id="f3"></p>
 
     <!--Gomb-->
     <button onclick="feldolgoz()">Feldolgoz</button>
@@ -31,17 +34,20 @@
             var feladat1=document.getElementById("szoveg").value;
             var hossz=feladat1.length;
             console.log("A beírt szöveg hossza: "+hossz);
+            document.getElementById("f1").innerText="A beírt szöveg hossza: "+hossz;
     
             //Feladat 2
             var csaladiNev=document.getElementById("csaladiNev").value;
             var keresztNev=document.getElementById("keresztNev").value;
             var teljesNev=csaladiNev+" "+keresztNev;
             alert("Teljesnév: "+teljesNev);
+            document.getElementById("f2").innerText="Teljesnév: "+teljesNev;
     
             //Feladat 3
             var kisbetus=document.getElementById("kisBetus").value;
             var kisbetus=kisbetus.toLowerCase();
             alert(kisbetus);
+            document.getElementById("f3").innerText=kisbetus
 
         }
     </script>
