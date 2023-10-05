@@ -4,31 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gyakorló String feladatok</title>
+    <script>
+        //Eseménykezelő
+        document.addEventListener("DOMContentLoaded", bekuldes());
+
+        function bekuldes(){
+            const bekuldve=document.getElementById("fel1");
+            const kicsivel=document.getElementById("kicsi").checked;
+            const naggyal=document.getElementById("nagy").checked;
+
+            if (kisbetus){
+                kimenet.innerText=fel1.toLowerCase();
+            }
+            else if (naggyal){
+                kimenet.innerText=fel1.toUpperCase();
+            }
+        }
+    </script>
 </head>
 <body>
-    <!--Feladat 1-->
-    <label for="szoveg">Kérlek írj be egy szöveget: </label>
-    <input type="text" id="szoveg">
-    <p id="f1"></p>
+    <!--Magamban-->
+    <div>
+        <!--Feladat 1-->
+        <label for="szoveg">Kérlek írj be egy szöveget: </label>
+        <input type="text" id="szoveg">
+        <p id="f1"></p>
+    
+        <!--Feladat 2-->
+        <label for="csaladiNev">Családinév:</label>
+        <input type="text" id="csaladiNev">
+    
+        <label for="keresztNev">Keresztnév: </label>
+        <input type="text" id="keresztNev">
+        <p id="f2"></p>
+    
+        <!--Feladat 3-->
+        <label for="kisBetus">Írj be vmit:</label>
+        <input type="text" id="kisBetus">
+        <p id="f3"></p>
+    
+        <!--Gomb-->
+        <button onclick="feldolgoz()">Feldolgoz</button>
+    </div>
 
-    <!--Feladat 2-->
-    <label for="csaladiNev">Családinév:</label>
-    <input type="text" id="csaladiNev">
-
-    <label for="keresztNev">Keresztnév: </label>
-    <input type="text" id="keresztNev">
-    <p id="f2"></p>
-
-    <!--Feladat 3-->
-    <label for="kisBetus">Írj be vmit:</label>
-    <input type="text" id="kisBetus">
-    <p id="f3"></p>
-
-    <!--Gomb-->
-    <button onclick="feldolgoz()">Feldolgoz</button>
+    <!--Közösen-->
+    <div>
+        <input type="text" placeholder="Adjon meg egy szöveget: " id="fel1">
+    </div>
+    <div>
+        <input type="radio" name="milyen" id="kicsi">
+        <label for="kicsi">Kisbetűs</label>
+        <input type="radio" name="milyen" id="nagy">
+        <label for="nagy">Nagybetűs</label>
+    </div>
+    <div>
+        <button onclick="bekuld()">Beküld</button>
+    </div>
+    <div>
+        <p id="kimenet"></p>
+    </div>
 
     <!--JS-->
     <script>
+        //Magamtól
         function feldolgoz(){
             //Feladat 1
             var feladat1=document.getElementById("szoveg").value;
