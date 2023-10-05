@@ -6,29 +6,28 @@
     <title>Gyakorló String feladatok</title>
     <script>
         //Eseménykezelő
-        document.addEventListener("DOMContentLoaded", function(){
-            function bekuldes(){
-                const kimenet=document.getElementById("kimenet");
-                const kisNagySzoveg=document.getElementById("fel1").value;
-                const kicsivel=document.getElementById("kicsi").checked;
-                const naggyal=document.getElementById("nagy").checked;
-    
-                if (kicsivel){
-                    kimenet.innerText=fel1.toLowerCase();
-                }
-                else if (naggyal){
-                    kimenet.innerText=fel1.toUpperCase();
-                }
-                kimenet=kisNagySzoveg;
+        document.addEventListener("DOMContentLoaded");
+        function bekuldes(){
+            const kimenet=document.getElementById("kimenet");
+            const kisNagySzoveg=document.getElementById("fel1").value;
+            const kicsivel=document.getElementById("kicsi").checked;
+            const naggyal=document.getElementById("nagy").checked;
+
+            if (kicsivel){
+                kimenet.innerText=kisNagySzoveg.toLowerCase();
             }
-        });
+            else if (naggyal){
+                kimenet.innerText=kisNagySzoveg.toUpperCase();
+            }
+            kimenet=kisNagySzoveg;
+        }
 
         document.addEventListener("DOMContentLoaded", init);
         function init(){
             const fel7_szamol=document.getElementById("fel7_szamol");
             const fel7_kimenet=document.getElementById("fel7_kimenet");
             
-            fel7_szamol.addEventListener("clikck", () => {
+            fel7_szamol.addEventListener("click", () => {
                 const fel7_szoveg=document.getElementById("fel7_szoveg").value;
                 let szokozok_szama=0;
                 for(let i=0;i<fel7_szoveg.length;i++){
