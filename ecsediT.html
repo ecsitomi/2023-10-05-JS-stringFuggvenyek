@@ -13,22 +13,23 @@
                 const kicsivel=document.getElementById("kicsi").checked;
                 const naggyal=document.getElementById("nagy").checked;
     
-                if (kisbetus){
-                    kisNagySzoveg.innerText=fel1.toLowerCase();
+                if (kicsivel){
+                    kimenet.innerText=fel1.toLowerCase();
                 }
                 else if (naggyal){
-                    kisNagySzoveg.innerText=fel1.toUpperCase();
+                    kimenet.innerText=fel1.toUpperCase();
                 }
+                kimenet=kisNagySzoveg;
             }
         });
 
         document.addEventListener("DOMContentLoaded", init);
         function init(){
-            const fel7_szoveg=document.getElementById("fel7_szoveg").value;
             const fel7_szamol=document.getElementById("fel7_szamol");
             const fel7_kimenet=document.getElementById("fel7_kimenet");
-
+            
             fel7_szamol.addEventListener("clikck", () => {
+                const fel7_szoveg=document.getElementById("fel7_szoveg").value;
                 let szokozok_szama=0;
                 for(let i=0;i<fel7_szoveg.length;i++){
                     const karakter=fel7_szoveg[i]
@@ -85,6 +86,9 @@
     </div>
 
     <!--Közös Feladat 7-->
+    <input type="text" placeholder="Szóköz számoló szöveg:" id="fel7_szoveg">
+    <button id="fel7_szamol">Számol</button>
+    <p id="fel7_kimenet"></p>
 
 
     <!--JS-->
