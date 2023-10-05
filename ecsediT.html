@@ -21,6 +21,24 @@
                 }
             }
         });
+
+        document.addEventListener("DOMContentLoaded", init);
+        function init(){
+            const fel7_szoveg=document.getElementById("fel7_szoveg").value;
+            const fel7_szamol=document.getElementById("fel7_szamol");
+            const fel7_kimenet=document.getElementById("fel7_kimenet");
+
+            fel7_szamol.addEventListener("clikck", () => {
+                let szokozok_szama=0;
+                for(let i=0;i<fel7_szoveg.length;i++){
+                    const karakter=fel7_szoveg[i]
+                    if(karakter==" "){
+                        szokozok_szama++;
+                    }
+                }
+                fel7_kimenet.innerHTML="Szóközök száma: "+szokozok_szama
+            })
+        }
     </script>
 </head>
 <body>
@@ -49,6 +67,7 @@
     </div>
 
     <!--Közösen-->
+    
     <div>
         <input type="text" placeholder="Adjon meg egy szöveget: " id="fel1">
     </div>
@@ -64,6 +83,9 @@
     <div>
         <p id="kimenet"></p>
     </div>
+
+    <!--Közös Feladat 7-->
+
 
     <!--JS-->
     <script>
