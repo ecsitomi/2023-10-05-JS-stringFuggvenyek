@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyakorló String feladatok</title>
+</head>
+<body>
+    <!--Feladat 1-->
+    <label for="szoveg">Kérlek írj be egy szöveget: </label>
+    <input type="text" id="szoveg">
+
+    <!--Feladat 2-->
+    <label for="csaladiNev">Családinév:</label>
+    <input type="text" id="csaladiNev">
+
+    <label for="keresztNev">Keresztnév: </label>
+    <input type="text" id="keresztNev">
+
+    <!--Feladat 3-->
+    <label for="kisBetus">Írj be vmit:</label>
+    <input type="text" id="kisBetus">
+
+    <!--Gomb-->
+    <button onclick="feldolgoz()">Feldolgoz</button>
+
+    <!--JS-->
+    <script>
+        function feldolgoz(){
+            //Feladat 1
+            var feladat1=document.getElementById("szoveg").value;
+            var hossz=feladat1.length;
+            console.log("A beírt szöveg hossza: "+hossz);
+    
+            //Feladat 2
+            var csaladiNev=document.getElementById("csaladiNev").value;
+            var keresztNev=document.getElementById("keresztNev").value;
+            var teljesNev=csaladiNev+" "+keresztNev;
+            alert("Teljesnév: "+teljesNev);
+    
+            //Feladat 3
+            var kisbetus=document.getElementById("kisBetus").value;
+            var kisbetus=kisbetus.toLowerCase();
+            alert(kisbetus);
+
+        }
+    </script>
+</body>
+</html>
