@@ -6,20 +6,21 @@
     <title>Gyakorló String feladatok</title>
     <script>
         //Eseménykezelő
-        document.addEventListener("DOMContentLoaded", bekuldes());
-
-        function bekuldes(){
-            const kimenet=document.getElementById("fel1");
-            const kicsivel=document.getElementById("kicsi").checked;
-            const naggyal=document.getElementById("nagy").checked;
-
-            if (kisbetus){
-                kimenet.innerText=fel1.toLowerCase();
+        document.addEventListener("DOMContentLoaded", function(){
+            function bekuldes(){
+                const kimenet=document.getElementById("kimenet");
+                const kisNagySzoveg=document.getElementById("fel1").value;
+                const kicsivel=document.getElementById("kicsi").checked;
+                const naggyal=document.getElementById("nagy").checked;
+    
+                if (kisbetus){
+                    kisNagySzoveg.innerText=fel1.toLowerCase();
+                }
+                else if (naggyal){
+                    kisNagySzoveg.innerText=fel1.toUpperCase();
+                }
             }
-            else if (naggyal){
-                kimenet.innerText=fel1.toUpperCase();
-            }
-        }
+        });
     </script>
 </head>
 <body>
